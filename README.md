@@ -3,9 +3,11 @@
 An all-in-one 3D asset studio, PBO explorer, and texture workbench designed specifically for **DayZ** and Bohemia Interactive Real Virtuality / Enfusion modding. Available as a standalone Windows desktop app (Electron) or local web workstation (Vite + React).
 
 For Easy Setup use these links. Otherwise proceed to the "Getting Started" section below
+
 Installer: https://github.com/ghosthex-dev/dayz-asset-forge/releases/tag/installer
 
 Portable Version: https://github.com/ghosthex-dev/dayz-asset-forge/releases/tag/Portable
+
 ---
 
 ## 🚀 Features
