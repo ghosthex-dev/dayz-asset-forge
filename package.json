@@ -1,0 +1,87 @@
+{
+  "name": "dayz-asset-forge",
+  "productName": "DayZ Asset Forge",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Modern 3D Asset & Modding Studio for DayZ",
+  "author": "DayZ Asset Forge Team",
+  "main": "dist-electron/main.cjs",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build:ui": "tsc && vite build",
+    "build:electron": "npx esbuild electron/main.ts --bundle --platform=node --target=node20 --outfile=dist-electron/main.cjs --external:electron",
+    "build": "npm run build:ui && npm run build:electron",
+    "dist": "npm run build && electron-builder",
+    "dist:dir": "npm run build && electron-builder --dir",
+    "dist:fast": "npm run build:electron && electron-builder",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/three": "^0.186.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "electron": "^44.9.0",
+    "electron-builder": "^26.15.3",
+    "esbuild": "^0.28.2",
+    "tailwindcss": "^4.3.3",
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0"
+  },
+  "dependencies": {
+    "lucide-react": "^1.59.0",
+    "lzo-decompress": "^1.0.11",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "three": "^0.186.1"
+  },
+  "build": {
+    "appId": "com.dayz.assetforge",
+    "productName": "DayZ Asset Forge",
+    "copyright": "Copyright © 2026",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "dist-electron/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "tools/bin",
+        "to": "tools/bin",
+        "filter": [
+          "*.exe"
+        ]
+      }
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "public/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "DayZ Asset Forge",
+      "uninstallDisplayName": "DayZ Asset Forge"
+    }
+  }
+}

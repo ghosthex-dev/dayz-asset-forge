@@ -1,0 +1,68 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production & Build outputs
+dist/
+dist-electron/
+release/
+build/
+out/
+
+# Caches and Temporary directories
+.cache/
+.edge-temp/
+*.tmp
+*.tmp.*
+*.rgba
+
+# DayZ game files & extracted assets (DO NOT COMMIT OFFICIAL/COPYRIGHTED GAME ASSETS)
+unpacked/
+*.pbo
+*.paa
+*.p3d
+*.rvmat
+*.bin
+*.ogg
+
+# Extracted Wavefront OBJ & metadata files (allow presets in src/)
+/*.obj
+/*.json
+!package.json
+!package-lock.json
+!tsconfig.json
+
+# Test scripts & screenshot dumps
+screenshot-*.png
+test-*.mjs
+*.mjs
+
+# Python cache & PyInstaller artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.spec
+
+# User local settings & environment
+settings.json
+*.local
+.env
+.env.*
+!.env.example
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Editor directories
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
